@@ -2100,10 +2100,10 @@
       <ul>
         <li><a href="mailto:hello@handoverbpo.com">hello@handoverbpo.com</a></li>
         
-        <li><a href="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms &amp; Conditions</a></li>
-        <li><a href="/popia">POPIA Compliance</a></li>
-        <li><a href="/cookies">Cookie Policy</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="/popia.html">POPIA Compliance</a></li>
+        <li><a href="/cookies.html">Cookie Policy</a></li>
       </ul>
     </div>
 
@@ -2111,10 +2111,10 @@
   <div class="footer-bottom">
     <div class="footer-copy">© 2025 Handover BPO Services · South Africa · All rights reserved</div>
     <ul class="footer-legal">
-      <li><a href="/privacy-policy">Privacy</a></li>
-      <li><a href="/terms">Terms</a></li>
-      <li><a href="/popia">POPIA</a></li>
-      <li><a href="/cookies">Cookies</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="/popia.html">POPIA</a></li>
+      <li><a href="/cookies.html">Cookies</a></li>
     </ul>
     <div class="footer-popia">POPIA COMPLIANT · RSA</div>
   </div>
@@ -2387,7 +2387,7 @@
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>3-month minimum from go-live date</li>
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>30-day written notice to cancel thereafter</li>
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>No hidden fees or exit penalties</li>
-            <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>Full POPIA compliance · South African servers</li>
+
           </ul>
         </div>
 
@@ -2473,7 +2473,7 @@
         <li>A minimum contract period of <strong style="color:white">3 months</strong> applies from the date of go-live.</li>
         <li>After the minimum term, <strong style="color:white">30 days written notice</strong> is required to cancel. No penalties apply.</li>
         <li>Additional charges for custom integrations and bespoke development are outlined in a separate schedule, available on request.</li>
-        <li>All data is stored on South African servers in full compliance with POPIA.</li>
+        
       </ul>
       <p style="margin-top:1.2rem;font-size:0.85rem;color:rgba(200,230,247,0.35)">For the full Additional Charges Schedule, email <a href="mailto:hello@handoverbpo.com?subject=DepotTrack Additional Charges Sheet" style="color:var(--gold)">hello@handoverbpo.com</a></p>
     </div>
@@ -2696,7 +2696,7 @@ const counterObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 counters.forEach(c => counterObserver.observe(c));
 
-// CONTACT FORM SUBMISSION
+// CONTACT FORM
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
 const successMsg = document.getElementById('form-success');
@@ -2719,31 +2719,14 @@ if (form) {
     };
 
     try {
-      // OPTION A: If you have a backend API route, use this:
-      // const res = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-
-      // OPTION B: Tally / Formspree — replace YOUR_FORM_ID below
-      // const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-
-      // TEMPORARY: Simulate success for testing (remove when live)
-      await new Promise(r => setTimeout(r, 1200));
-      const res = { ok: true };
-
+      const res = await fetch('https://formspree.io/f/mvzyaqyj', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
       if (res.ok) {
         form.style.display = 'none';
         successMsg.style.display = 'block';
-        // Track conversion in GA if available
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submit', { event_category: 'contact', event_label: data.service });
-        }
       } else {
         throw new Error('Failed');
       }
@@ -2777,13 +2760,47 @@ function closeDepotTrack() {
 // ESC key closes
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDepotTrack(); });
 
-// DepotTrack form
+// DEPOTTRACK FORM
 const dtForm = document.getElementById('dt-form');
 if (dtForm) {
-  dtForm.addEventListener('submit', e => {
+  dtForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    dtForm.querySelectorAll('input,select,button').forEach(el => el.disabled = true);
-    document.getElementById('dt-success').style.display = 'block';
+    const btn = dtForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const formData = {
+      name: dtForm.querySelector('input[type="text"]').value,
+      email: dtForm.querySelector('input[type="email"]').value,
+      company: dtForm.querySelectorAll('input[type="text"]')[1].value,
+      phone: dtForm.querySelector('input[type="tel"]').value,
+      industry: dtForm.querySelectorAll('select')[0].value,
+      fleetSize: dtForm.querySelectorAll('select')[1].value,
+      message: dtForm.querySelector('textarea') ? dtForm.querySelector('textarea').value : '',
+      formType: 'DepotTrack Demo Request'
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/mvzyaqyj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (res.ok) {
+        dtForm.style.display = 'none';
+        document.getElementById('dt-success').style.display = 'block';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      btn.textContent = 'Request Demo';
+      btn.disabled = false;
+      alert('Something went wrong. Please email hello@handoverbpo.com directly.');
+    }
   });
 }
 
