@@ -507,7 +507,11 @@
     50% { opacity: 1; transform: scaleY(1.1); }
   }
 
-  /* REVEAL ANIMATION */
+  /* ============================================
+     CINEMATIC SCROLL EFFECTS
+  ============================================ */
+
+  /* Base state — elements start hidden */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -530,6 +534,9 @@
   }
   .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
+
+
+  .stat-num { text-shadow: var(--glow-cyan); }
   /* SECTION COMMON */
   .section-label {
     font-family: 'Share Tech Mono', monospace;
@@ -560,6 +567,27 @@
     font-size: 1.05rem;
     font-weight: 400;
   }
+
+
+  /* CINEMATIC GLOW LAYERS */
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(0,245,255,0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,0,170,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(0,50,100,0.18) 0%, transparent 60%);
+    pointer-events: none; z-index: 1;
+    animation: heroGlow 8s ease-in-out infinite alternate;
+  }
+  @keyframes heroGlow {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+  }
+
+
+
+
 
   /* SERVICES */
   #services {
@@ -1622,8 +1650,9 @@
     <span style="font-size:0.6em; color:rgba(200,230,247,0.4); font-weight:400; display:block; font-family:'Rajdhani',sans-serif; letter-spacing:4px; margin-top:0.5rem;">WE SEND YOU SYSTEMS.</span>
   </h1>
   <p class="hero-sub">Enterprise-grade automation and business intelligence architected for South African SMEs — in a fraction of the time and cost.</p>
+
   <div class="hero-ctas">
-    <a href="https://www.handoverbpo.com/contact" class="btn-primary">Get a Quote</a>
+    <a href="#contact-strip" class="btn-primary">Get a Quote</a>
     <a href="#services" class="btn-ghost">View Services</a>
   </div>
   <div class="hero-stats">
@@ -1640,8 +1669,8 @@
       <span class="stat-label">Core Services</span>
     </div>
     <div class="stat">
-      <span class="stat-num">100%</span>
-      <span class="stat-label">POPIA Compliant</span>
+      <span class="stat-num">24/7</span>
+      <span class="stat-label">Always On</span>
     </div>
   </div>
   <div class="scroll-hint">
@@ -1728,7 +1757,7 @@
         </svg>
       </div>
       <div class="service-title">Website Design &amp; Maintenance</div>
-      <p class="service-desc">High-performance Wix builds and mobile-first CMS solutions with monthly SEO maintenance for South African SMEs.</p>
+      <p class="service-desc">High-performance Wix builds and mobile-first CMS solutions with monthly SEO maintenance for South African SEO.</p>
       <div class="service-tags">
         <span class="service-tag">Wix CMS</span>
         <span class="service-tag">SEO</span>
@@ -1893,7 +1922,7 @@
         <li>Predictive Forecasting</li>
         <li>Google Analytics Sync</li>
       </ul>
-      <a href="https://www.handoverbpo.com/contact" class="price-cta">Get Started</a>
+      <a href="#contact-strip" class="price-cta">Get Started</a>
     </div>
 
     <div class="price-card reveal" style="transition-delay:0.2s">
@@ -1909,7 +1938,7 @@
         <li>Security Monitoring</li>
         <li>Technical Support</li>
       </ul>
-      <a href="https://www.handoverbpo.com/contact" class="price-cta">Get Started</a>
+      <a href="#contact-strip" class="price-cta">Get Started</a>
     </div>
 
     <div class="price-card reveal" style="transition-delay:0.3s">
@@ -1925,7 +1954,7 @@
         <li>No-Code CRM Sync</li>
         <li>Lead Capture Tools</li>
       </ul>
-      <a href="https://www.handoverbpo.com/contact" class="price-cta">Get Started</a>
+      <a href="#contact-strip" class="price-cta">Get Started</a>
     </div>
 
     <div class="price-card featured reveal" style="transition-delay:0.4s">
@@ -1942,7 +1971,7 @@
         <li>Teams Integrations</li>
         <li>Dept Access Control</li>
       </ul>
-      <a href="https://www.handoverbpo.com/contact" class="price-cta">Get Started</a>
+      <a href="#contact-strip" class="price-cta">Get Started</a>
     </div>
 
   </div>
@@ -1974,7 +2003,7 @@
       <span class="line-mag" style="font-size:0.55em; font-weight:400; font-family:'Rajdhani',sans-serif; letter-spacing:4px">SYSTEMS THAT OUTLAST YOUR HEADCOUNT DECISIONS</span>
     </h2>
     <p class="manifesto-sub">Handover BPO builds the digital infrastructure, automations, and business intelligence systems that let your business breathe.</p>
-    <a href="https://www.handoverbpo.com/contact" class="btn-primary">Start Your Transformation</a>
+    <a href="#contact-strip" class="btn-primary">Start Your Transformation</a>
   </div>
 </section>
 
@@ -2331,10 +2360,19 @@
 
   <!-- PRICING -->
   <div class="dt-section">
-    <div id="dt-pricing" style="text-align:center;margin-bottom:3rem">
+    <div id="dt-pricing" style="text-align:center;margin-bottom:2rem">
       <div class="section-label" style="justify-content:center">Pricing</div>
       <h2 class="section-title">Simple. Transparent.</h2>
       <p class="section-body" style="max-width:500px;margin:0 auto">One plan. Full access from day one. No feature tiers, no per-user charges, no surprises.</p>
+    </div>
+
+    <!-- Currency Toggle -->
+    <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:2.5rem;font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:0.9rem">
+      <span id="dt-zar-label" style="color:var(--cyan)">ZAR</span>
+      <div id="dt-cur-toggle" onclick="toggleDTCurrency()" style="width:56px;height:26px;background:rgba(0,245,255,0.08);border:1px solid rgba(0,245,255,0.3);border-radius:13px;position:relative;cursor:pointer;transition:all 0.3s">
+        <div id="dt-cur-thumb" style="width:20px;height:20px;background:var(--cyan);border-radius:50%;position:absolute;top:3px;left:3px;transition:all 0.3s;box-shadow:0 0 10px rgba(0,245,255,0.4)"></div>
+      </div>
+      <span id="dt-usd-label" style="color:rgba(200,230,247,0.35)">USD</span>
     </div>
 
     <div style="max-width:960px;margin:0 auto 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
@@ -2346,13 +2384,13 @@
 
         <div style="margin:1.5rem 0;padding-bottom:1.5rem;border-bottom:1px solid rgba(201,168,76,0.12)">
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(200,230,247,0.35);letter-spacing:2px;margin-bottom:0.3rem">ONCE-OFF SETUP FEE</div>
-          <div class="dt-plan-price" style="font-size:2.8rem">R<span>25,000</span></div>
+          <div class="dt-plan-price" style="font-size:2.8rem" id="dt-setup-price">R<span>25,000</span></div>
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(200,230,247,0.3);letter-spacing:2px;margin-top:0.3rem">Once-off · includes full system setup, configuration &amp; onboarding</div>
         </div>
 
         <div style="margin-bottom:2rem">
-          <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(200,230,247,0.35);letter-spacing:2px;margin-bottom:0.3rem">MONTHLY RETAINER</div>
-          <div class="dt-plan-price">R<span>10,500</span><small style="font-size:1rem;color:rgba(200,230,247,0.4)">/mo</small></div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(200,230,247,0.35);letter-spacing:2px;margin-bottom:0.3rem">MONTHLY SUBSCRIPTION</div>
+          <div class="dt-plan-price" id="dt-monthly-price">R<span>10,500</span><small style="font-size:1rem;color:rgba(200,230,247,0.4)">/mo</small></div>
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(200,230,247,0.3);letter-spacing:2px;margin-top:0.3rem">12-month minimum agreement · 30-day notice thereafter</div>
         </div>
 
@@ -2383,21 +2421,21 @@
         <div style="background:rgba(201,168,76,0.03);border:1px solid rgba(201,168,76,0.15);padding:2rem;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))">
           <div style="font-family:'Orbitron',monospace;font-size:0.65rem;font-weight:700;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem">Contract Terms</div>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem">
-            <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>R25,000 setup &amp; onboarding fee payable before commencement</li>
+            <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span><span id="dt-terms-setup">R25,000 setup &amp; onboarding fee payable before commencement</span></li>
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>12-month minimum agreement from go-live date</li>
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>30-day written notice to cancel after minimum term</li>
             <li style="font-size:0.85rem;color:rgba(200,230,247,0.55);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--cyan);flex-shrink:0;margin-top:2px">▸</span>No hidden fees or exit penalties</li>
-
           </ul>
         </div>
 
         <div style="background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.25);padding:1.5rem;text-align:center;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))">
           <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:3px;color:rgba(201,168,76,0.6);margin-bottom:0.5rem">FIRST PAYMENT DUE</div>
-          <div style="font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--white)">R<span style="color:var(--gold)">35,500</span></div>
-          <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:2px;color:rgba(201,168,76,0.35);margin-top:0.4rem">Setup (R25,000) + 1st month (R10,500)</div>
+          <div style="font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--white)" id="dt-first-payment"><span style="color:var(--gold)">R35,500</span></div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:2px;color:rgba(201,168,76,0.35);margin-top:0.4rem" id="dt-first-breakdown">Setup (R25,000) + 1st month (R10,500)</div>
         </div>
       </div>
     </div>
+
 
     <!-- SIGN UP FORM -->
     <div id="dt-signup" style="max-width:640px;margin:0 auto 4rem">
@@ -2609,16 +2647,6 @@ document.querySelectorAll('.service-card').forEach(card => {
   });
 });
 
-// SCROLL REVEAL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
 // CURRENCY TOGGLE
 const toggle = document.getElementById('currency-toggle');
@@ -2739,6 +2767,17 @@ if (form) {
   });
 }
 
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
 // DEPOTTRACK PAGE
 function openDepotTrack() {
   const page = document.getElementById('depottrack-page');
@@ -2811,6 +2850,55 @@ mobileToggle.addEventListener('click', () => {
   mobileToggle.classList.toggle('open');
   mobileNavEl.classList.toggle('open');
 });
+// DEPOTTRACK CURRENCY TOGGLE
+let dtIsUSD = false;
+const dtPrices = {
+  zar: {
+    setup: 'R<span>25,000</span>',
+    monthly: 'R<span>10,500</span><small style="font-size:1rem;color:rgba(200,230,247,0.4)">/mo</small>',
+    firstPayment: '<span style="color:var(--gold)">R35,500</span>',
+    firstBreakdown: 'Setup (R25,000) + 1st month (R10,500)',
+    termsSetup: 'R25,000 setup &amp; onboarding fee payable before commencement'
+  },
+  usd: {
+    setup: '$<span>2,000</span>',
+    monthly: '$<span>1,000</span><small style="font-size:1rem;color:rgba(200,230,247,0.4)">/mo</small>',
+    firstPayment: '<span style="color:var(--gold)">$3,000</span>',
+    firstBreakdown: 'Setup ($2,000) + 1st month ($1,000)',
+    termsSetup: '$2,000 setup &amp; onboarding fee payable before commencement'
+  }
+};
+function toggleDTCurrency() {
+  dtIsUSD = !dtIsUSD;
+  const p = dtIsUSD ? dtPrices.usd : dtPrices.zar;
+  const thumb = document.getElementById('dt-cur-thumb');
+  const zarLbl = document.getElementById('dt-zar-label');
+  const usdLbl = document.getElementById('dt-usd-label');
+  if (thumb) thumb.style.transform = dtIsUSD ? 'translateX(30px)' : 'translateX(0)';
+  if (zarLbl) zarLbl.style.color = dtIsUSD ? 'rgba(200,230,247,0.35)' : 'var(--cyan)';
+  if (usdLbl) usdLbl.style.color = dtIsUSD ? 'var(--cyan)' : 'rgba(200,230,247,0.35)';
+  const setupEl = document.getElementById('dt-setup-price');
+  const monthlyEl = document.getElementById('dt-monthly-price');
+  const firstEl = document.getElementById('dt-first-payment');
+  const breakdownEl = document.getElementById('dt-first-breakdown');
+  const termsEl = document.getElementById('dt-terms-setup');
+  [setupEl, monthlyEl, firstEl].filter(Boolean).forEach(el => {
+    el.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+    el.style.opacity = '0'; el.style.transform = 'translateY(6px)';
+  });
+  setTimeout(() => {
+    if (setupEl) setupEl.innerHTML = p.setup;
+    if (monthlyEl) monthlyEl.innerHTML = p.monthly;
+    if (firstEl) firstEl.innerHTML = p.firstPayment;
+    if (breakdownEl) breakdownEl.textContent = p.firstBreakdown.replace(/&amp;/g, '&');
+    if (termsEl) termsEl.innerHTML = p.termsSetup;
+    [setupEl, monthlyEl, firstEl].filter(Boolean).forEach(el => {
+      el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+    });
+  }, 200);
+}
+
 function closeMobileNav() {
   mobileToggle.classList.remove('open');
   mobileNavEl.classList.remove('open');
@@ -2826,8 +2914,7 @@ document.addEventListener('click', e => {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+const navObserver = new IntersectionObserver((entries) => {  entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(link => {
         link.classList.remove('active');
@@ -2841,13 +2928,7 @@ const navObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => navObserver.observe(s));
 
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  const heroTitle = document.querySelector('.hero-title');
-  const heroSub = document.querySelector('.hero-sub');
-  if (heroTitle) heroTitle.style.transform = `translateY(${y * 0.15}px)`;
-  if (heroSub) heroSub.style.transform = `translateY(${y * 0.08}px)`;
-});
+
 </script>
 </body>
 </html>
