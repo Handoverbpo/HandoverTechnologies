@@ -261,6 +261,28 @@
     text-align:center; margin-top:38px; color:var(--steel); font-size:13.5px; font-weight:500;
   }
 
+  /* ---------- CURRENCY TOGGLE ---------- */
+  .currency-toggle{
+    display:inline-flex; align-items:center; gap:2px;
+    background:var(--panel); border:1px solid var(--hairline); border-radius:24px;
+    padding:4px; margin:0 auto 40px; position:relative;
+  }
+  .currency-toggle-wrap{display:flex; justify-content:center;}
+  .ct-btn{
+    border:none; background:transparent; cursor:pointer;
+    padding:9px 22px; border-radius:20px; font-family:'IBM Plex Mono';
+    font-size:13px; font-weight:600; letter-spacing:0.03em; color:var(--steel);
+    transition:background .15s ease, color .15s ease;
+  }
+  .ct-btn.active{background:var(--signal); color:var(--brand-navy, #14213D);}
+  .ct-btn:not(.active):hover{color:var(--ink);}
+  .currency-note{
+    text-align:center; font-family:'IBM Plex Mono'; font-size:12px; color:var(--steel);
+    margin:-28px auto 40px; font-weight:500;
+  }
+  [data-currency-block]{display:none;}
+  [data-currency-block].active{display:block;}
+
   /* ---------- WHY ---------- */
   .why-grid{
     display:grid; grid-template-columns:1fr; gap:1px;
@@ -515,68 +537,182 @@
     <div class="section-head" style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto;">
       <span class="tag">Pricing</span>
       <h2>Priced by fleet size. Nothing else.</h2>
-      <p style="margin-left:auto; margin-right:auto;">Per site, per month, VAT inclusive, the same way the rest of the market quotes it, so it's an easy comparison.</p>
+      <p style="margin-left:auto; margin-right:auto;">Per site, per month, the same way the rest of the market quotes it, so it's an easy comparison.</p>
     </div>
 
-    <div class="price-grid">
-      <div class="price-card">
-        <span class="band">Up to 20 trailers</span>
-        <h3>Starter</h3>
-        <div class="price"><span class="amt">R665</span><span class="per">/ site / month</span></div>
-        <div class="vat">VAT inclusive · billed monthly</div>
-        <hr>
-        <ul>
-          <li><span class="c">✓</span> Full fleet, rates & bookings</li>
-          <li><span class="c">✓</span> Digital agreements & signatures</li>
-          <li><span class="c">✓</span> Payments & cash-up</li>
-          <li><span class="c">✓</span> Damage claims & reports</li>
-          <li><span class="c">✓</span> Role-based permissions</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost">Get Started</a>
+    <div class="currency-toggle-wrap">
+      <div class="currency-toggle" role="group" aria-label="Currency">
+        <button type="button" class="ct-btn" data-currency-btn="zar">ZAR (R)</button>
+        <button type="button" class="ct-btn" data-currency-btn="usd">USD ($)</button>
+      </div>
+    </div>
+    <p class="currency-note">Prices shown in <span id="currency-note-label">South African Rand</span>. Switch above if you're pricing this out of South Africa.</p>
+
+    <!-- ZAR PRICING -->
+    <div data-currency-block="zar">
+      <div class="price-grid">
+        <div class="price-card">
+          <span class="band">Up to 20 trailers</span>
+          <h3>Starter</h3>
+          <div class="price"><span class="amt">R665</span><span class="per">/ site / month</span></div>
+          <div class="vat">VAT inclusive · billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Full fleet, rates & bookings</li>
+            <li><span class="c">✓</span> Digital agreements & signatures</li>
+            <li><span class="c">✓</span> Payments & cash-up</li>
+            <li><span class="c">✓</span> Damage claims & reports</li>
+            <li><span class="c">✓</span> Role-based permissions</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Get Started</a>
+        </div>
+
+        <div class="price-card pop">
+          <span class="badge">Most operators</span>
+          <span class="band">20 to 40 trailers</span>
+          <h3>Growth</h3>
+          <div class="price"><span class="amt">R805</span><span class="per">/ site / month</span></div>
+          <div class="vat">VAT inclusive · billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Everything in Starter</li>
+            <li><span class="c">✓</span> Multi-branch fleet visibility</li>
+            <li><span class="c">✓</span> Centralised reporting</li>
+            <li><span class="c">✓</span> Bulk import & Excel export</li>
+            <li><span class="c">✓</span> Full audit log</li>
+          </ul>
+          <a href="#contact" class="btn btn-solid">Get Started</a>
+        </div>
+
+        <div class="price-card">
+          <span class="band">40+ trailers</span>
+          <h3>Enterprise</h3>
+          <div class="price"><span class="amt">R1,045</span><span class="per">/ site / month</span></div>
+          <div class="vat">VAT inclusive · billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Everything in Growth</li>
+            <li><span class="c">✓</span> Cross-branch fleet tracking</li>
+            <li><span class="c">✓</span> Priority support</li>
+            <li><span class="c">✓</span> Onboarding assistance</li>
+            <li><span class="c">✓</span> Custom rate structures</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Get Started</a>
+        </div>
       </div>
 
-      <div class="price-card pop">
-        <span class="badge">Most operators</span>
-        <span class="band">20 to 40 trailers</span>
-        <h3>Growth</h3>
-        <div class="price"><span class="amt">R805</span><span class="per">/ site / month</span></div>
-        <div class="vat">VAT inclusive · billed monthly</div>
-        <hr>
-        <ul>
-          <li><span class="c">✓</span> Everything in Starter</li>
-          <li><span class="c">✓</span> Multi-branch fleet visibility</li>
-          <li><span class="c">✓</span> Centralised reporting</li>
-          <li><span class="c">✓</span> Bulk import & Excel export</li>
-          <li><span class="c">✓</span> Full audit log</li>
-        </ul>
-        <a href="#contact" class="btn btn-solid">Get Started</a>
-      </div>
-
-      <div class="price-card">
-        <span class="band">40+ trailers</span>
-        <h3>Multi-Site</h3>
-        <div class="price"><span class="amt">R1,045</span><span class="per">/ site / month</span></div>
-        <div class="vat">VAT inclusive · billed monthly</div>
-        <hr>
-        <ul>
-          <li><span class="c">✓</span> Everything in Growth</li>
-          <li><span class="c">✓</span> Cross-branch fleet tracking</li>
-          <li><span class="c">✓</span> Priority support</li>
-          <li><span class="c">✓</span> Onboarding assistance</li>
-          <li><span class="c">✓</span> Custom rate structures</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost">Get Started</a>
+      <div style="max-width:720px; margin:36px auto 0; padding:20px 24px; background:var(--panel); border:1px solid var(--hairline); border-radius:8px; text-align:left;">
+        <p style="font-size:14.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Running more than one location?</p>
+        <p style="font-size:14px; color:var(--steel); font-weight:500; line-height:1.6;">Pricing applies per site, and each site is billed separately at the tier that matches its own trailer count. A company running 25 locations doesn't get one blended rate. A 15-trailer depot bills as Starter, a 45-trailer depot bills as Enterprise, and so on across every location on the account.</p>
       </div>
     </div>
 
-    <div style="max-width:720px; margin:36px auto 0; padding:20px 24px; background:var(--panel); border:1px solid var(--hairline); border-radius:8px; text-align:left;">
-      <p style="font-size:14.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Running more than one location?</p>
-      <p style="font-size:14px; color:var(--steel); font-weight:500; line-height:1.6;">Pricing applies per site, and each site is billed separately at the tier that matches its own trailer count. A company running 25 locations doesn't get one blended rate. A 15-trailer depot bills as Starter, a 45-trailer depot bills as Multi-Site, and so on across every location on the account.</p>
+    <!-- USD PRICING -->
+    <div data-currency-block="usd">
+      <div class="price-grid">
+        <div class="price-card">
+          <span class="band">Up to 20 trailers</span>
+          <h3>Starter</h3>
+          <div class="price"><span class="amt">$149</span><span class="per">/ site / month</span></div>
+          <div class="vat">Billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Full fleet, rates & bookings</li>
+            <li><span class="c">✓</span> Digital agreements & signatures</li>
+            <li><span class="c">✓</span> Payments & cash-up</li>
+            <li><span class="c">✓</span> Damage claims & reports</li>
+            <li><span class="c">✓</span> Role-based permissions</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Get Started</a>
+        </div>
+
+        <div class="price-card pop">
+          <span class="badge">Most operators</span>
+          <span class="band">21 to 40 trailers</span>
+          <h3>Growth</h3>
+          <div class="price"><span class="amt">$249</span><span class="per">/ site / month</span></div>
+          <div class="vat">Billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Everything in Starter</li>
+            <li><span class="c">✓</span> Multi-branch fleet visibility</li>
+            <li><span class="c">✓</span> Centralised reporting</li>
+            <li><span class="c">✓</span> Bulk import & Excel export</li>
+            <li><span class="c">✓</span> Full audit log</li>
+          </ul>
+          <a href="#contact" class="btn btn-solid">Get Started</a>
+        </div>
+
+        <div class="price-card">
+          <span class="band">41+ trailers</span>
+          <h3>Enterprise</h3>
+          <div class="price"><span class="amt">$399</span><span class="per">/ site / month</span></div>
+          <div class="vat">Billed monthly</div>
+          <hr>
+          <ul>
+            <li><span class="c">✓</span> Everything in Growth</li>
+            <li><span class="c">✓</span> Cross-branch fleet tracking</li>
+            <li><span class="c">✓</span> Priority support</li>
+            <li><span class="c">✓</span> Onboarding assistance</li>
+            <li><span class="c">✓</span> Custom rate structures</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">Get Started</a>
+        </div>
+      </div>
+
+      <div style="max-width:720px; margin:36px auto 0; padding:20px 24px; background:var(--panel); border:1px solid var(--hairline); border-radius:8px; text-align:left;">
+        <p style="font-size:14.5px; font-weight:600; color:var(--ink); margin-bottom:6px;">Running more than one location?</p>
+        <p style="font-size:14px; color:var(--steel); font-weight:500; line-height:1.6;">Pricing applies per site, and each site is billed separately at the tier that matches its own trailer count. A company running 25 locations doesn't get one blended rate. A 15-trailer depot bills as Starter, a 45-trailer depot bills as Enterprise, and so on across every location on the account.</p>
+      </div>
     </div>
 
     <p class="pricing-foot">All plans include the full feature set. Plans scale with the size of your fleet, not what the software can do.</p>
   </div>
 </section>
+
+<script>
+  (function(){
+    var STORAGE_KEY = 'hitchpoint_currency';
+    var blocks = document.querySelectorAll('[data-currency-block]');
+    var buttons = document.querySelectorAll('[data-currency-btn]');
+    var noteLabel = document.getElementById('currency-note-label');
+    var labels = { zar: 'South African Rand', usd: 'US Dollars' };
+
+    function setCurrency(code){
+      blocks.forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-currency-block') === code);
+      });
+      buttons.forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-currency-btn') === code);
+      });
+      if(noteLabel) noteLabel.textContent = labels[code] || labels.zar;
+      try{ localStorage.setItem(STORAGE_KEY, code); }catch(e){}
+    }
+
+    function detectDefault(){
+      try{
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if(saved === 'zar' || saved === 'usd') return saved;
+      }catch(e){}
+      try{
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if(tz.indexOf('Johannesburg') !== -1 || tz.indexOf('Africa') !== -1) return 'zar';
+        var lang = navigator.language || '';
+        if(lang.toUpperCase().indexOf('ZA') !== -1) return 'zar';
+        if(tz){ return 'usd'; }
+      }catch(e){}
+      return 'zar';
+    }
+
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){
+        setCurrency(b.getAttribute('data-currency-btn'));
+      });
+    });
+
+    setCurrency(detectDefault());
+  })();
+</script>
 
 <!-- ================= WHY ================= -->
 <section class="section">
@@ -609,7 +745,7 @@
       </details>
       <details>
         <summary>We run more than one location. How does billing work?</summary>
-        <p>Each location is billed separately, at the tier that matches its own trailer count. There's no single blended rate across your company. If you operate 25 locations, some might bill as Starter and others as Growth or Multi-Site, based purely on how many trailers are at each one. This keeps pricing fair as you scale into new locations, and it's how your invoice is itemised.</p>
+        <p>Each location is billed separately, at the tier that matches its own trailer count. There's no single blended rate across your company. If you operate 25 locations, some might bill as Starter and others as Growth or Enterprise, based purely on how many trailers are at each one. This keeps pricing fair as you scale into new locations, and it's how your invoice is itemised.</p>
       </details>
       <details>
         <summary>Is VAT actually included in the price shown?</summary>
