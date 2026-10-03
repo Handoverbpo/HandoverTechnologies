@@ -1,0 +1,12 @@
+{
+  "name": "handover-technologies-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Handover Technologies marketing website: static, zero-dependency build.",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "serve": "node serve.js",
+    "dev": "node build.js && node serve.js"
+  }
+}

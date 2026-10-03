@@ -1,0 +1,148 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node build.js",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "handoverbpo.com"
+        }
+      ],
+      "destination": "https://www.handoverbpo.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "handoverbpo.vercel.app"
+        }
+      ],
+      "destination": "https://www.handoverbpo.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/depottrack",
+      "destination": "/products/depottrack/",
+      "permanent": true
+    },
+    {
+      "source": "/depottrack.html",
+      "destination": "/products/depottrack/",
+      "permanent": true
+    },
+    {
+      "source": "/hitchpoint",
+      "destination": "/products/hitchpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/hitchpoint.html",
+      "destination": "/products/hitchpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/legal/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/legal/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/legal/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/legal/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/popia",
+      "destination": "/legal/popia-compliance/",
+      "permanent": true
+    },
+    {
+      "source": "/popia.html",
+      "destination": "/legal/popia-compliance/",
+      "permanent": true
+    },
+    {
+      "source": "/cookies",
+      "destination": "/legal/cookie-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/cookies.html",
+      "destination": "/legal/cookie-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/legal/terms-of-service",
+      "destination": "/legal/terms-and-conditions/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    }
+  ]
+}
