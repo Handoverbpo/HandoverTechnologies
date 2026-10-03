@@ -4,33 +4,33 @@
   "installCommand": "",
   "buildCommand": "node build.js",
   "outputDirectory": "dist",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "handoverbpo.com"
         }
       ],
-      "destination": "https://www.handoverbpo.com/:path*",
+      "destination": "https://www.handoverbpo.com/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "handoverbpo.vercel.app"
         }
       ],
-      "destination": "https://www.handoverbpo.com/:path*",
+      "destination": "https://www.handoverbpo.com/$1",
       "permanent": true
     },
     {
-      "source": "/depottrack",
+      "source": "/depottrack/",
       "destination": "/products/depottrack/",
       "permanent": true
     },
@@ -40,7 +40,7 @@
       "permanent": true
     },
     {
-      "source": "/hitchpoint",
+      "source": "/hitchpoint/",
       "destination": "/products/hitchpoint/",
       "permanent": true
     },
@@ -50,7 +50,7 @@
       "permanent": true
     },
     {
-      "source": "/privacy",
+      "source": "/privacy/",
       "destination": "/legal/privacy-policy/",
       "permanent": true
     },
@@ -60,7 +60,7 @@
       "permanent": true
     },
     {
-      "source": "/terms",
+      "source": "/terms/",
       "destination": "/legal/terms-and-conditions/",
       "permanent": true
     },
@@ -70,7 +70,7 @@
       "permanent": true
     },
     {
-      "source": "/popia",
+      "source": "/popia/",
       "destination": "/legal/popia-compliance/",
       "permanent": true
     },
@@ -80,7 +80,7 @@
       "permanent": true
     },
     {
-      "source": "/cookies",
+      "source": "/cookies/",
       "destination": "/legal/cookie-policy/",
       "permanent": true
     },
@@ -95,7 +95,7 @@
       "permanent": true
     },
     {
-      "source": "/legal/terms-of-service",
+      "source": "/legal/terms-of-service/",
       "destination": "/legal/terms-and-conditions/",
       "permanent": true
     }
