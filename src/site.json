@@ -1,0 +1,36 @@
+{
+  "name": "Handover Technologies",
+  "shortName": "Handover",
+  "url": "https://www.handoverbpo.com",
+  "tagline": "Build it. Run it. Hand it over.",
+  "description": "Handover Technologies is a South African software studio building WhatsApp, Facebook and Instagram chatbots, workflow automation, Power BI reporting, corporate intranets, websites, and the DepotTrack and HitchPoint products.",
+  "locale": "en_ZA",
+  "email": "hello@handoverbpo.com",
+  "hours": "Mon – Fri, 08:00 – 17:00 SAST",
+  "social": {
+    "linkedin": "",
+    "facebook": "",
+    "instagram": ""
+  },
+  "legalUpdated": "2 October 2026",
+  "forms": {
+    "default": "https://formspree.io/f/mvzyaqyj",
+    "depottrack": "https://formspree.io/f/xwvgqqkj",
+    "hitchpoint": "https://formspree.io/f/mqererlp"
+  },
+  "updated": "2026-10-03",
+  "googleSiteVerification": "",
+  "bingSiteVerification": "",
+  "keywords": [
+    "Chatbots",
+    "WhatsApp chatbots",
+    "Workflow automation",
+    "Power BI",
+    "Business intelligence",
+    "Corporate intranets",
+    "SharePoint",
+    "Website design",
+    "Fleet depot management software",
+    "Trailer rental software"
+  ]
+}
