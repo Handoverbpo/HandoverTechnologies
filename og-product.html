@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Source for product share images (1200x630). Render with:
+     Chrome --headless --allow-file-access-from-files --screenshot=OUT.png --window-size=1200,630 "file://…/tools/og-product.html?p=depottrack"   -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;650&family=Geist+Mono:wght@500&family=Instrument+Serif:ital@1&display=block" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#fff;font-family:Geist,sans-serif;color:#0b0c0e}
+  .glow{position:absolute;right:-200px;top:-260px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,#c4f2f4,transparent 65%)}
+  .copy{position:absolute;left:64px;top:64px;width:500px}
+  .logo{height:46px}
+  h1{margin:56px 0 0;font-size:62px;line-height:.98;letter-spacing:-.045em;font-weight:650}
+  em{font-family:"Instrument Serif",serif;font-weight:400}
+  .by{position:absolute;left:64px;bottom:56px;display:flex;align-items:center;gap:14px;font-family:"Geist Mono",monospace;font-size:15px;letter-spacing:.14em;color:#686d76;text-transform:uppercase}
+  .by img{height:30px}
+  .shot{position:absolute;left:610px;top:96px;width:720px;border-radius:14px;overflow:hidden;border:1px solid #e7e4de;box-shadow:0 40px 80px -30px rgba(11,12,14,.35)}
+  .shot img{display:block;width:100%}
+</style></head><body>
+<div class="glow"></div>
+<div class="copy"><img class="logo" id="logo"><h1 id="h"></h1></div>
+<div class="by">by <img src="../src/assets/img/logos/handover-wordmark.png"> Technologies</div>
+<div class="shot"><img id="shot"></div>
+<script>
+const P={depottrack:{logo:'../src/assets/img/logos/depottrack-dark.png',h:'GPS says it\'s there.<br><em>We say what happened.</em>',shot:'../src/assets/img/depottrack/dashboard.webp'},
+ hitchpoint:{logo:'../src/assets/img/logos/hitchpoint-mark.svg',h:'Run your whole yard<br><em>from one screen.</em>',shot:'../src/assets/img/hitchpoint/home.webp'}};
+const p=P[new URLSearchParams(location.search).get('p')||'depottrack'];
+logo.src=p.logo; h.innerHTML=p.h; shot.src=p.shot;
+if(p.logo.endsWith('.svg')) logo.style.height='64px';
+</script>
+</body></html>
