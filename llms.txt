@@ -1,0 +1,19 @@
+# Handover Technologies
+
+> Handover Technologies is a South African software studio. It builds WhatsApp, Facebook and Instagram chatbots, workflow automation, Power BI reporting, corporate intranets and custom websites, and makes two software products: DepotTrack and HitchPoint. Website: https://www.handoverbpo.com
+
+## Products
+- [DepotTrack](https://www.handoverbpo.com/products/depottrack/): fleet and depot management software. QR checkpoints track vehicles from depot entry to dispatch, with live dwell times, alerts and an audit trail. R25 000 setup, then R10 500 per month (10 users, 3 stations).
+- [HitchPoint](https://www.handoverbpo.com/products/hitchpoint/): trailer rental management software for independent yards. Fleet, quotes, bookings, digital agreements, payments and cash-up. From R665 per site per month, no setup fee.
+
+## Services
+- [Chatbots](https://www.handoverbpo.com/services/chatbots/): WhatsApp, Facebook Messenger and Instagram assistants.
+- [Workflow automation](https://www.handoverbpo.com/services/workflow-automation/): Make.com, Power Automate and custom integrations.
+- [Power BI reporting](https://www.handoverbpo.com/services/power-bi-reporting/): dashboards and forecasting.
+- [Corporate intranets](https://www.handoverbpo.com/services/corporate-intranets/): SharePoint and Microsoft 365.
+- [Website design and maintenance](https://www.handoverbpo.com/services/website-design/)
+
+## Company
+- [Pricing](https://www.handoverbpo.com/pricing/): setup fee plus monthly retainer, prices in ZAR.
+- [About](https://www.handoverbpo.com/about/)
+- [Contact](https://www.handoverbpo.com/contact/): all enquiries are handled through the website contact forms.

@@ -1,0 +1,266 @@
+---
+title: DepotTrack Fleet Depot Software
+description: DepotTrack is fleet and depot management software for South African fleets: QR checkpoints from gate to dispatch, live dwell times, alerts and audit trails.
+nav: products depottrack
+crumb: DepotTrack
+ogImage: /assets/img/og-depottrack.png
+ogImageAlt: DepotTrack fleet depot management software by Handover Technologies
+updated: 2026-10-03
+priority: 0.9
+---
+<section class="page-hero product-hero">
+  {{> page-bg}}
+  <div class="wrap">
+    {{page.breadcrumbs}}
+    <div class="prod-badge"><img src="/assets/img/logos/depottrack-dark.png" alt="DepotTrack" width="840" height="104"><span class="live-chip">Live</span></div>
+    <div class="product-hero-grid">
+      <h1 class="display-2"><span class="h1-label">DepotTrack · Fleet &amp; depot management software</span>GPS tells you it's there. <em>DepotTrack tells you what happened.</em></h1>
+      <div>
+        <p class="lead">Telematics stops at the gate. From entry to dispatch, most depots run on a whiteboard, a radio and hope. DepotTrack closes that gap, one QR scan at a time.</p>
+        <div class="actions">
+          <a class="btn btn-signal" href="#contact" data-magnetic>Talk to us about your fleet <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#tour">Take the tour</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div><b>6</b><span>Checkpoints, gate to road</span></div>
+      <div><b>&lt;15s</b><span>Per QR scan</span></div>
+      <div><b>1 day</b><span>To set up</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap screen-wrap product-screen">
+  <div class="screen shot-screen" data-screen>
+    <div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/dashboard</span><span class="live-chip">Live</span></div>
+    <img src="/assets/img/depottrack/dashboard.webp" srcset="/assets/img/depottrack/dashboard-960.webp 960w, /assets/img/depottrack/dashboard.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack dashboard: active fleet, vehicles in field, scans today, overdue vehicles, licence alerts, depot occupancy and live checkpoint status" fetchpriority="high">
+  </div>
+  {{> float-pipe}}
+</div>
+
+<div class="marquee" aria-label="Built for">
+  <div class="marquee-track"><span>Car rental</span><span>Truck hire</span><span>Logistics &amp; freight</span><span>Courier depots</span><span>Construction fleet</span><span>Set up in a day</span><span>Entry → dispatch</span></div>
+  <div class="marquee-track" aria-hidden="true"><span>Car rental</span><span>Truck hire</span><span>Logistics &amp; freight</span><span>Courier depots</span><span>Construction fleet</span><span>Set up in a day</span><span>Entry → dispatch</span></div>
+</div>
+
+<section class="section" id="problem">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="kicker">01 — The GPS blind spot</p>
+      <h2 class="h2">Five hours and thirty-eight minutes <em>you can't account for.</em></h2>
+      <p class="lead">That's the gap between "arrived" and "left" on your tracker. Inside it, a vehicle goes through fuel, intake, cleaning and dispatch prep, and none of it is recorded where your ops manager can see it. When a client asks why a turnaround took two days, the honest answer is usually "we're not sure."</p>
+    </header>
+    <div class="tl reveal" data-animate>
+      <div class="tl-row">
+        <span class="tl-label">GPS only</span>
+        <div class="tl-bar">
+          <span class="tl-gps"><b>09:14</b><small>Arrived</small></span>
+          <span class="tl-blind"><b>5h 38m blind spot</b><small>Which bay? Fuelled? Cleaned? Nobody knows.</small></span>
+          <span class="tl-gps"><b>14:52</b><small>Left</small></span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <span class="tl-label">With DepotTrack</span>
+        <div class="tl-bar seg">
+          <span style="--m:17"><b>Fuel</b><small>09:31 · 17m</small></span>
+          <span style="--m:27"><b>Intake</b><small>09:58 · 27m</small></span>
+          <span class="hot" style="--m:125"><b>Waiting for wash bay</b><small>12:03 · 2h 05m</small></span>
+          <span style="--m:80"><b>Cleaning</b><small>13:23 · 1h 20m</small></span>
+          <span style="--m:89"><b>Ready → Out</b><small>14:52 · 1h 29m</small></span>
+        </div>
+      </div>
+    </div>
+    <p class="tl-note reveal">The bottleneck is suddenly obvious, and so is who owns it.</p>
+  </div>
+</section>
+
+<section class="section alt" id="tour">
+  <div class="wrap" data-tabs>
+    <header class="section-head row reveal">
+      <div>
+        <p class="kicker">02 — Product tour</p>
+        <h2 class="h2">See it working. <em>Every screen, real product.</em></h2>
+      </div>
+      <p class="lead">Six screens your team will actually use, from the gate scan to the monthly report.</p>
+    </header>
+    <div class="tabs tour-tabs" role="tablist" aria-label="DepotTrack screens">
+      <button class="tab" role="tab" id="t-dashboard" aria-controls="tour-dashboard" data-hash="tour-dashboard">Dashboard</button>
+      <button class="tab" role="tab" id="t-pipeline" aria-controls="tour-pipeline" data-hash="tour-pipeline">Live pipeline</button>
+      <button class="tab" role="tab" id="t-scan" aria-controls="tour-scan" data-hash="tour-scan">Scan vehicle</button>
+      <button class="tab" role="tab" id="t-fleet" aria-controls="tour-fleet" data-hash="tour-fleet">Fleet register</button>
+      <button class="tab" role="tab" id="t-service" aria-controls="tour-service" data-hash="tour-service">Service intervals</button>
+      <button class="tab" role="tab" id="t-reports" aria-controls="tour-reports" data-hash="tour-reports">Reports</button>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-dashboard" aria-labelledby="t-dashboard" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/dashboard</span></div><img src="/assets/img/depottrack/dashboard-960.webp" srcset="/assets/img/depottrack/dashboard-960.webp 960w, /assets/img/depottrack/dashboard.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack dashboard with fleet KPIs, depot occupancy, live checkpoint status and overdue vehicles" loading="lazy"></div>
+        <figcaption><span class="mono">01 / 06</span><b>Dashboard</b><span>Fleet readiness, checkpoint status and licence alerts, all on one screen the moment you log in.</span></figcaption>
+      </figure>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-pipeline" aria-labelledby="t-pipeline" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/live-pipeline</span></div><img src="/assets/img/depottrack/live-pipeline-960.webp" srcset="/assets/img/depottrack/live-pipeline-960.webp 960w, /assets/img/depottrack/live-pipeline.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack live pipeline board with vehicles in columns from entry to dispatched out, with dwell times" loading="lazy"></div>
+        <figcaption><span class="mono">02 / 06</span><b>Live pipeline</b><span>Every vehicle, every checkpoint, live. See exactly what's sitting where, and for how long.</span></figcaption>
+      </figure>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-scan" aria-labelledby="t-scan" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/scan-vehicle</span></div><img src="/assets/img/depottrack/scan-vehicle-960.webp" srcset="/assets/img/depottrack/scan-vehicle-960.webp 960w, /assets/img/depottrack/scan-vehicle.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack scan screen for logging a vehicle at a checkpoint" loading="lazy"></div>
+        <figcaption><span class="mono">03 / 06</span><b>Scan vehicle</b><span>A QR scan and a few taps (registration, checkpoint, odometer, fuel) and it's done in under 15 seconds.</span></figcaption>
+      </figure>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-fleet" aria-labelledby="t-fleet" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/fleet-register</span></div><img src="/assets/img/depottrack/fleet-register-960.webp" srcset="/assets/img/depottrack/fleet-register-960.webp 960w, /assets/img/depottrack/fleet-register.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack fleet register listing vehicles, stations and licence status" loading="lazy"></div>
+        <figcaption><span class="mono">04 / 06</span><b>Fleet register</b><span>Every vehicle in the fleet with its station, licence status and current state, searchable in seconds.</span></figcaption>
+      </figure>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-service" aria-labelledby="t-service" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/service-intervals</span></div><img src="/assets/img/depottrack/service-intervals-960.webp" srcset="/assets/img/depottrack/service-intervals-960.webp 960w, /assets/img/depottrack/service-intervals.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack service intervals screen showing overdue and upcoming services" loading="lazy"></div>
+        <figcaption><span class="mono">05 / 06</span><b>Service intervals</b><span>Overdue and due-soon services flagged automatically, with a full service history per vehicle.</span></figcaption>
+      </figure>
+    </div>
+    <div class="tabpanel tour-panel" role="tabpanel" id="tour-reports" aria-labelledby="t-reports" tabindex="0">
+      <figure class="tour">
+        <div class="shot"><div class="shot-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">depottrack.io/reports</span></div><img src="/assets/img/depottrack/reports-960.webp" srcset="/assets/img/depottrack/reports-960.webp 960w, /assets/img/depottrack/reports.webp 1800w" sizes="(max-width: 1300px) 100vw, 1240px" width="1800" height="1027" alt="DepotTrack reports screen with dwell summaries and checkpoint efficiency" loading="lazy"></div>
+        <figcaption><span class="mono">06 / 06</span><b>Reports</b><span>Nine report types out of the box: dwell summaries, slow vehicles, checkpoint efficiency and more.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="checkpoints">
+  <div class="wrap">
+    <header class="section-head row reveal">
+      <div>
+        <p class="kicker">03 — The checkpoint pipeline</p>
+        <h2 class="h2">One QR scan. Six checkpoints. <em>Zero guesswork.</em></h2>
+      </div>
+      <p class="lead">Every vehicle moves through the same six gates from entry to dispatch. A few seconds with a phone camera at each one writes the depot's story as it happens, not from memory at the end of the week.</p>
+    </header>
+    <ol class="process six reveal">
+      <li><h3>Entry</h3><p>Logged the moment it crosses the gate: registration, driver, time.</p></li>
+      <li><h3>Fuel</h3><p>Fuel level captured before the vehicle moves further into the yard.</p></li>
+      <li><h3>Depot intake</h3><p>Odometer, condition notes and damage flagged on arrival, not disputed later.</p></li>
+      <li><h3>Cleaning</h3><p>Wash and valet status tracked so nothing dispatches half-done.</p></li>
+      <li><h3>Dispatch ready</h3><p>Signed off as fit to go, the last check before the road.</p></li>
+      <li><h3>Dispatch out</h3><p>The exit scan closes the loop and resets the dwell-time clock.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section alt" id="features">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="kicker">04 — What you get</p>
+      <h2 class="h2">Everything your ops manager <em>currently keeps in their head.</em></h2>
+    </header>
+    <div class="grid-3">
+      <article class="card reveal"><span class="icon"><svg><use href="#i-pin"/></svg></span><h3>Every vehicle, live</h3><p>One board shows every vehicle on site and exactly which checkpoint it's at, right now. No more phone calls to the yard.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="icon"><svg><use href="#i-clock"/></svg></span><h3>Dwell time, automatically</h3><p>The clock starts at entry and splits by checkpoint, so you can see exactly where a vehicle lost time, and who was responsible.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="icon"><svg><use href="#i-alert"/></svg></span><h3>Alerts before it's a problem</h3><p>Vehicles that overstay a threshold, miss a checkpoint or come due for a service get flagged before a client or auditor notices.</p></article>
+      <article class="card reveal"><span class="icon"><svg><use href="#i-file"/></svg></span><h3>A record for every scan</h3><p>Who scanned it, where and when, timestamped and unchangeable. When there's a dispute, you have the answer, not an opinion.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="icon"><svg><use href="#i-layers"/></svg></span><h3>One system, every branch</h3><p>Run one depot or thirteen. Every branch reports into the same fleet register, with consistent checkpoints across all of them.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="icon"><svg><use href="#i-lock"/></svg></span><h3>The right screen per role</h3><p>Gate staff get a scan screen. Managers get the dashboard. Nobody sees (or accidentally edits) more than their role needs.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="kicker">05 — Who it's for</p>
+      <h2 class="h2">If vehicles pass through a gate, <em>this is for you.</em></h2>
+      <p class="lead">Built for operators managing 50 to 200+ vehicles, where a whiteboard and a radio used to be the whole system.</p>
+    </header>
+    <div class="grid-5">
+      <article class="mini reveal"><span class="icon"><svg><use href="#i-car"/></svg></span><h3>Car rental</h3><p>Fleet turnaround between bookings.</p></article>
+      <article class="mini reveal" style="--d:.05s"><span class="icon"><svg><use href="#i-truck"/></svg></span><h3>Truck hire</h3><p>Inspection and handover accountability.</p></article>
+      <article class="mini reveal" style="--d:.1s"><span class="icon"><svg><use href="#i-box"/></svg></span><h3>Logistics</h3><p>Cross-branch consistency at scale.</p></article>
+      <article class="mini reveal" style="--d:.15s"><span class="icon"><svg><use href="#i-bike"/></svg></span><h3>Courier depots</h3><p>High-volume in-and-out visibility.</p></article>
+      <article class="mini reveal" style="--d:.2s"><span class="icon"><svg><use href="#i-crane"/></svg></span><h3>Construction fleet</h3><p>Site dispatch and compliance records.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="pricing">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="kicker">06 — Pricing</p>
+      <h2 class="h2">Simple pricing. <em>No hidden tiers.</em></h2>
+      <p class="lead">One setup fee, one monthly fee, and no lock-in beyond a standard monthly term.</p>
+    </header>
+    <div class="plan-solo reveal">
+      <article class="plan featured">
+        <span class="plan-badge">Full platform</span>
+        <h3>DepotTrack</h3>
+        <p class="plan-desc">Everything, configured for your depot and rolled out in a day.</p>
+        <div class="price"><span class="from">Monthly</span><strong>R10&nbsp;500</strong><span>/ month</span></div>
+        <p class="setup">+ R25&nbsp;000 once-off setup</p>
+        <ul class="plan-feats">
+          <li>Full onboarding, checkpoint configuration &amp; QR rollout</li>
+          <li>Up to 10 users and 3 stations included</li>
+          <li>Live board, dwell times &amp; alerts</li>
+          <li>Ongoing support, audit trail &amp; reporting</li>
+          <li>No lock-in beyond a standard monthly term</li>
+        </ul>
+        <a class="btn btn-block" href="#contact">Talk to us about your fleet <span aria-hidden="true">→</span></a>
+      </article>
+      <div class="addons">
+        <h3>As you grow</h3>
+        <dl>
+          <div><dt>Additional user</dt><dd>R1&nbsp;000 / month</dd></div>
+          <div><dt>Additional station</dt><dd>R2&nbsp;500 / month</dd></div>
+          <div><dt>Setup time</dt><dd>1 day</dd></div>
+          <div><dt>Contract</dt><dd>Month to month</dd></div>
+        </dl>
+        <p class="price-note">Running more than three depots or a large team? We'll put together a fleet-wide quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">FAQ</p>
+      <h2 class="h2">DepotTrack <em>questions.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>How long does it take to get running?</summary><div><p>One day. We configure your checkpoints, set up your users and stations, and roll out the QR codes with your team.</p></div></details>
+      <details><summary>Does it replace our GPS tracking?</summary><div><p>No. It complements it. Telematics tells you where a vehicle is on the road; DepotTrack records what happens between the gate and the road.</p></div></details>
+      <details><summary>What's included in the monthly fee?</summary><div><p>Up to 10 users and 3 stations, the live board, dwell-time tracking, alerts, the audit trail, reporting and ongoing support.</p></div></details>
+      <details><summary>Can we add more depots or users later?</summary><div><p>Yes. Additional users are R1&nbsp;000 per month and additional stations R2&nbsp;500 per month, added whenever you need them.</p></div></details>
+      <details><summary>Is there a long-term contract?</summary><div><p>No lock-in beyond a standard monthly term.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="kicker"><span class="rec"></span> Ready when you are</p>
+      <h2 class="h2">Close your <em>GPS blind spot.</em></h2>
+      <p class="lead" style="margin-top:24px">Tell us a bit about your fleet (how many vehicles, how many depots) and we'll get back to you within one business day.</p>
+      <ul class="contact-list" style="margin-top:36px">
+        <li><span class="mono">Response</span><span>Within one business day</span></li>
+      </ul>
+    </div>
+    <div class="card reveal" style="--d:.1s" >
+      <h2 class="h3" style="margin-bottom:24px">Send an enquiry</h2>
+      {{> form-depottrack}}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type": "SoftwareApplication", "@id": "{{page.canonical}}#software", "name": "DepotTrack", "alternateName": ["Depot Track", "DepotTrack by Handover Technologies"], "applicationCategory": "BusinessApplication", "applicationSubCategory": "Fleet depot management software", "operatingSystem": "Web browser, iOS, Android", "url": "{{page.canonical}}", "image": "{{site.url}}/assets/img/og-depottrack.png", "screenshot": ["{{site.url}}/assets/img/depottrack/dashboard.webp", "{{site.url}}/assets/img/depottrack/live-pipeline.webp", "{{site.url}}/assets/img/depottrack/scan-vehicle.webp", "{{site.url}}/assets/img/depottrack/fleet-register.webp", "{{site.url}}/assets/img/depottrack/service-intervals.webp", "{{site.url}}/assets/img/depottrack/reports.webp"], "description": "Fleet and depot management software that tracks every vehicle from depot entry to dispatch with QR checkpoints, live dwell times, alerts and a tamper-proof audit trail.", "featureList": ["QR checkpoint scanning", "Live depot pipeline board", "Automatic dwell-time tracking", "Overstay and missed-checkpoint alerts", "Service interval tracking", "Audit trail for every scan", "Multi-station fleet register", "Role-based access", "Nine built-in reports"], "areaServed": {"@type": "Country", "name": "South Africa"}, "publisher": {"@id": "{{site.url}}/#organization"}, "provider": {"@id": "{{site.url}}/#organization"}, "offers": {"@type": "Offer", "price": "10500", "priceCurrency": "ZAR", "url": "{{page.canonical}}#pricing", "availability": "https://schema.org/InStock", "description": "R10 500 per month plus R25 000 once-off setup; includes 10 users and 3 stations"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How long does it take to get running?","acceptedAnswer":{"@type":"Answer","text":"One day. We configure your checkpoints, users and stations and roll out the QR codes with your team."}},
+{"@type":"Question","name":"Does it replace our GPS tracking?","acceptedAnswer":{"@type":"Answer","text":"No. Telematics tells you where a vehicle is on the road; DepotTrack records what happens between the gate and the road."}},
+{"@type":"Question","name":"Can we add more depots or users later?","acceptedAnswer":{"@type":"Answer","text":"Yes. Additional users are R1 000 per month and additional stations R2 500 per month."}}
+]}]}
+</script>

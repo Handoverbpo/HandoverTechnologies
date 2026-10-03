@@ -1,0 +1,39 @@
+<form class="form" data-contact-form action="{{site.forms.default}}" method="POST" novalidate>
+  <input type="hidden" name="_subject" value="Handover Technologies website enquiry">
+  <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="phone">Phone <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+  <div class="field"><label for="company">Company <span class="opt">(optional)</span></label><input id="company" name="company" autocomplete="organization"></div>
+  <div class="field">
+    <label for="service">I'm interested in</label>
+    <select id="service" name="service" required>
+      <option value="">Choose a service…</option>
+      <option value="chatbots">Chatbots (WhatsApp, Facebook, Instagram)</option>
+      <option value="automation">Workflow Automation</option>
+      <option value="powerbi">Power BI Reporting</option>
+      <option value="intranet">Corporate Intranet</option>
+      <option value="website">Website Design &amp; Care</option>
+      <option value="depottrack">DepotTrack (fleet &amp; depot visibility)</option>
+      <option value="hitchpoint">HitchPoint (trailer rental management)</option>
+      <option value="products">Other products / early access</option>
+      <option value="custom">Custom system</option>
+      <option value="other">Something else</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="budget">Budget <span class="opt">(optional)</span></label>
+    <select id="budget" name="budget">
+      <option value="">Not sure yet</option>
+      <option>Under R15&nbsp;000</option>
+      <option>R15&nbsp;000 – R50&nbsp;000</option>
+      <option>R50&nbsp;000 – R150&nbsp;000</option>
+      <option>R150&nbsp;000+</option>
+      <option>Monthly plan</option>
+    </select>
+  </div>
+  <div class="field full"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="A few lines about your business and what you'd like to improve."></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="hp-field">Leave this empty</label><input id="hp-field" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="consent" value="yes" required><span>I agree that {{site.name}} may use these details to respond to my enquiry, as described in the <a href="/legal/privacy-policy/">Privacy Policy</a>.</span></label>
+  <button class="btn btn-signal" type="submit">Send message <span aria-hidden="true">→</span></button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

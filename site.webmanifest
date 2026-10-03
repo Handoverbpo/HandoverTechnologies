@@ -1,0 +1,11 @@
+{
+  "name": "Handover Technologies",
+  "short_name": "Handover",
+  "icons": [
+    { "src": "/favicon-48.png", "type": "image/png", "sizes": "48x48" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

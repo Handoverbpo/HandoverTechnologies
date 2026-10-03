@@ -1,0 +1,24 @@
+<form class="form" data-contact-form action="{{site.forms.hitchpoint}}" method="POST" novalidate>
+  <input type="hidden" name="_subject" value="HitchPoint enquiry">
+  <input type="hidden" name="product" value="HitchPoint">
+  <div class="field"><label for="hp-name">Full name</label><input id="hp-name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="hp-email">Work email</label><input id="hp-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="hp-company">Company</label><input id="hp-company" name="company" autocomplete="organization" required></div>
+  <div class="field"><label for="hp-phone">Phone <span class="opt">(optional)</span></label><input id="hp-phone" name="phone" type="tel" autocomplete="tel"></div>
+  <div class="field">
+    <label for="hp-size">Trailers per site</label>
+    <select id="hp-size" name="fleet_size" required>
+      <option value="">Select a range…</option>
+      <option>Up to 20 trailers</option>
+      <option>20 to 40 trailers</option>
+      <option>40+ trailers</option>
+      <option>Multiple locations</option>
+    </select>
+  </div>
+  <div class="field"><label for="hp-sites">Number of sites <span class="opt">(optional)</span></label><input id="hp-sites" name="sites" type="number" min="1" inputmode="numeric"></div>
+  <div class="field full"><label for="hp-message">Message <span class="opt">(optional)</span></label><textarea id="hp-message" name="message" placeholder="Tell us about your yard and how you take bookings today."></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="hp-hp">Leave this empty</label><input id="hp-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="consent" value="yes" required><span>I agree that {{site.name}} may use these details to respond to my HitchPoint enquiry, as described in the <a href="/legal/privacy-policy/">Privacy Policy</a>.</span></label>
+  <button class="btn btn-signal" type="submit">Send HitchPoint enquiry <span aria-hidden="true">→</span></button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

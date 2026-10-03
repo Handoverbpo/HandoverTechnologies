@@ -1,0 +1,23 @@
+<form class="form" data-contact-form action="{{site.forms.depottrack}}" method="POST" novalidate>
+  <input type="hidden" name="_subject" value="DepotTrack enquiry">
+  <input type="hidden" name="product" value="DepotTrack">
+  <div class="field"><label for="dt-name">Full name</label><input id="dt-name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="dt-email">Work email</label><input id="dt-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="dt-company">Company</label><input id="dt-company" name="company" autocomplete="organization" required></div>
+  <div class="field"><label for="dt-phone">Phone <span class="opt">(optional)</span></label><input id="dt-phone" name="phone" type="tel" autocomplete="tel"></div>
+  <div class="field">
+    <label for="dt-size">Fleet size</label>
+    <select id="dt-size" name="fleet_size" required>
+      <option value="">Select a range…</option>
+      <option>Under 50 vehicles</option>
+      <option>50 to 199 vehicles</option>
+      <option>200+ vehicles</option>
+    </select>
+  </div>
+  <div class="field"><label for="dt-sites">Number of depots <span class="opt">(optional)</span></label><input id="dt-sites" name="sites" type="number" min="1" inputmode="numeric"></div>
+  <div class="field full"><label for="dt-message">Message <span class="opt">(optional)</span></label><textarea id="dt-message" name="message" placeholder="Tell us how your depot runs today and what you would like to see."></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="dt-hp">Leave this empty</label><input id="dt-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="consent" value="yes" required><span>I agree that {{site.name}} may use these details to respond to my DepotTrack enquiry, as described in the <a href="/legal/privacy-policy/">Privacy Policy</a>.</span></label>
+  <button class="btn btn-signal" type="submit">Send DepotTrack enquiry <span aria-hidden="true">→</span></button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
